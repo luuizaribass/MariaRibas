@@ -27,6 +27,28 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Responsividade para telas menores (celulares) */
+@media (max-width: 800px) {
+    .scroll-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Responsividade para telas bem pequenas (por segurança) */
+@media (max-width: 400px) {
+    .scroll-to-top {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
 
 .scroll-to-top:hover {
     background-color: #9c3fff;
