@@ -9,7 +9,7 @@
     
     <style>
      
-.scroll-to-top {
+     .scroll-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -25,27 +25,27 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
-/* Responsividade para telas menores (celulares) */
-@media (max-width: 800px) {
+
+@media (max-width: 600px) {
     .scroll-to-top {
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
         font-size: 22px;
-        bottom: 15px;
-        right: 15px;
+        bottom: 30px;
+        right: 16px;  
     }
 }
 
-/* Responsividade para telas bem pequenas (por segurança) */
 @media (max-width: 400px) {
     .scroll-to-top {
-        width: 35px;
-        height: 35px;
+        width: 38px;
+        height: 38px;
         font-size: 20px;
-        bottom: 10px;
-        right: 10px;
+        bottom: 40px;
+        right: 14px;
     }
 }
 
@@ -54,9 +54,16 @@
     background-color: #9c3fff;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
         
 body {
    font-family: 'Poppins', sans-serif;
+   max-width: 100vw;
    margin: 0;
    padding: 0;
    background: #161616;
