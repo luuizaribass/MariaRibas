@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Luiza Ribas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon"href="img/icon.png">
+    
+    <style>
+     
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #6a11cb;
+    color: white;
+    font-size: 24px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.scroll-to-top:hover {
+    background-color: #9c3fff;
+}
+
+        
+body {
+   font-family: 'Poppins', sans-serif;
+   margin: 0;
+   padding: 0;
+   background: #161616;
+   color: #ffffff;
+   overflow-x: hidden;
+}
+
+.container {
+   width: 80%;
+   margin: auto;
+   padding: 20px;
+   border-radius: 12px;
+   animation: fadeIn 1s ease-in-out;
+   backdrop-filter: blur(5px);
+}
+
+header {
+    background: linear-gradient(90deg, #161616, #2a0057, #04135c);
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo img{
+  width: 120px;
+  color: #9c3fff;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #be82ff;
+}
+
+.main-content {
+  display: flex;
+  height: calc(100vh - 80px);
+}
+
+.left-section {
+  background-color: #161616;
+  color: white;
+  padding: 50px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-section h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.left-section p.subtitulo {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #9c3fff;
+}
+
+.left-section p.profissao {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.right-section {
+  width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imgResponsiva {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width:900px){
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  nav a {
+    font-size: 14px;
+    margin-left: 0;
+  }
+
+  .main-content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-section,
+  .right-section {
+    display: none;
+  }
+
+  .left-section h1 {
+    font-size: 32px;
+  }
+
+  .left-section p.subtitulo,
+  .left-section p.profissao {
+    font-size: 16px;
+  }
+
+  .right-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+
+
+
+section {
+   margin: 20px 0;
+   padding: 15px;
+   border-left: 5px solid #6a11cb;
+   animation: fadeInUp 1s ease-in-out;
+}
+h2 {
+   color: #9c3fff;
+}
+ul {
+   list-style: none;
+   padding-left: 0;
+}
+
+ul li {
+   background: rgba(255, 255, 255, 0.1);
+   padding: 10px;
+   margin: 5px 0;
+   border-radius: 5px;
+   transition: background 0.3s ease-in-out;
+   position: relative;
+   display: flex;
+   align-items: center;
+}
+ul li:hover {
+   background: rgba(255, 255, 255, 0.2);
+}
+.hover-info {
+   position: relative;
+   cursor: pointer;
+}
+.hover-info span {
+   visibility: hidden;
+   width: 220px;
+   background: #333;
+   color: #fff;
+   text-align: center;
+   padding: 8px;
+   border-radius: 5px;
+   position: absolute;
+   z-index: 1;
+   bottom: 125%;
+   left: 50%;
+   transform: translateX(-50%);
+   opacity: 0;
+   transition: opacity 0.3s;
+}
+.hover-info:hover span {
+   visibility: visible;
+   opacity: 1;
+}
+
+a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.localiza{
+    margin-right: 10px;
+}
+
+.videoResponsivo {
+    width: 100%;
+    height: auto;
+    max-width: 640px;
+    border-radius: 10px;
+  }
+
+.final{
+    text-align: center;
+    background-color: #333;
+
+}
+
+.final p{
+    padding: 10px;
+    margin: 0px;
+}
+
+
+    </style>
+</head>
+
+<body>
+
+   
+    <header>
+        <div class="logo"><img src="img/logoIcon.png" alt=""></div>
+        <nav>
+          <a href="#sobremim">Sobre mim</a>
+          <a href="#objetivo">Objetivo</a>
+          <a href="#foracademica">Formação</a>
+          <a href="#cursocomp">Cursos</a>
+          <a href="#hard">Hard Skills</a>
+          <a href="#extra">Extras</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#exp">Experiência</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </header>
+    
+      <div class="main-content">
+        <div class="left-section">
+          <p class="subtitulo">Olá, sou</p>
+          <h1>Maria Luiza Ribas</h1>
+          <p class="profissao">Estudante / Desenvolvedora / Criativa</p>
+        </div>
+        <div class="right-section">
+            <img src="img/logo.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>          
+      </div>
+
+    <div class="container">
+        <section>
+            <h2 id="sobremim">Sobre mim</h2>
+            <p>📅 Nascimento em 17 de junho de 2007</p>
+            <p>📚 Estudante de Análise e Desenvovimento de Sistemas</p>
+            <p>🎨 Escritora de poesia no <a href="https://www.instagram.com/rbliterario">@rbliterario</a></p>
+            <p>📦 Empreendedora no <a href="https://www.instagram.com/ribasbiju">@ribasbiju</a></p>
+            <p>📍 Ferraz de Vasconcelos, SP - Brasil</p>
+        </section>
+        
+        <section>
+            <h2 id="objetivo">Objetivo</h2>
+            <p>Aplicar meus conhecimentos em tecnologia para desenvolver soluções inovadoras, contribuir com projetos impactantes e evoluir profissionalmente na área de desenvolvimento de sistemas.</p>
+        </section>
+        <section>
+            <h2 id="foracademica">Formação Acadêmica</h2>
+            <ul>
+                <p><strong>Escola SESI SP - </strong>2022-2024</p>
+                <li><img class="localiza" src="img/sesi.png" width="40px"> Tecnólogo em Análise e Desenvolvimento de Sitemas</li>
+                <li><a href="https://www.google.com/maps/dir//R.+Francisco+A+Zeiler,+20+-+Jardim+Juliana,+Ferraz+de+Vasconcelos+-+SP,+08502-310/@-23.5428396,-46.4397016,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x94ce7aceb279709b:0x75f9237d480a9c89!2m2!1d-46.3572882!2d-23.5428574?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D">⬆️ Localização: Centro Educacional 240 </a></li>
+                <p><strong>Faculdade SENAI SP - </strong>2023-2024</p>
+                <li><img class="localiza" src="img/senai.png" width="40px"> Técnico em Análise e Desenvolvimento de Sitemas</li>
+                <li><a href="https://www.google.com/maps/dir//R.+In%C3%A1cio+Garc%C3%ADa,+321+-+Cidade+Edson,+Suzano+-+SP,+08665-120/@-23.5566299,-46.396014,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x94ce709cdd72cb8d:0xa0c48f485457b882!2m2!1d-46.3136124!2d-23.5566516?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D">⬆️ Localização: Escola SENAI "Luis Eulalio de Bueno Vidigal Filho" </a></li>
+                <p><strong>Faculdade SENAI SP -</strong>2025-Atual</p>
+                <li><img class="localiza" src="img/senai.png" width="40px"> Tecnólogo em Análise e Desenvolvimento de Sitemas</li>
+                <li><a href="https://www.google.com/maps?sca_esv=18dbed916f33843d&sxsrf=AHTn8zpvXA7Ppv1YZ_6pfCcKW2vJystEew:1743722098336&gs_lp=Egxnd3Mtd2l6LXNlcnAiDHNlbmFpIHZpbGEgbCoCCAAyDhAuGIAEGMcBGI4FGK8BMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeSNAyUPsEWNolcAF4AJABAJgB3QGgAb0OqgEGMC4xMi4xuAEByAEA-AEBmAINoALvDcICChAAGLADGNYEGEfCAg0QABiABBiwAxhDGIoFwgIKECMYgAQYJxiKBcICCxAuGIAEGMcBGK8BwgIFEAAYgATCAgoQABiABBgUGIcCwgIIEAAYgAQYsQPCAg4QLhiABBixAxjHARivAcICEBAuGIAEGEMYxwEYigUYrwHCAgoQABiABBhDGIoFwgIWEC4YgAQYsQMYQxjHARiKBRiOBRivAcICERAuGIAEGLEDGMcBGI4FGK8BmAMAiAYBkAYMkgcGMS4xMS4xoAfHoQKyBwYwLjExLjG4B-gN&um=1&ie=UTF-8&fb=1&gl=br&sa=X&geocode=KaHj6BG4-M6UMbNBj8e0S1an&daddr=R.+Jaguar%C3%A9+Mirim,+71+-+Vila+Leopoldina,+S%C3%A3o+Paulo+-+SP,+05311-020">⬆️ Localização: Senai Vila Leopoldina - Mariano Ferraz </a></li>
+            </ul>
+        </section>
+        <section>
+            <h2 id="cursocomp">Cursos Complementares</h2>
+            <ul>
+                <p><strong>SENAI EAD - </strong>2023</p>
+                <li>Desvendando o 5G</li>
+                <li>Economia Circular</li>
+                <li>Privacidade e Proteção de Dados</li>
+                <p><strong>SENAI EAD - </strong>2024</p>
+                <li>Desvendando a Blockchain</li>
+                <li>Desvendando a Indústria 4.0</li>
+                <li>Empreender</li>
+                <li>Preparação Mundo do Trabalho</li>
+                <li>WEB 3.0</li>
+            </ul>
+        </section>
+        <section>
+            <h2 id="hard">Hard Skills</h2>
+            <div class="skills-icons">
+                <img height="30" width="40"src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg"/>
+                <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"/>
+                <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"/>
+                <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"/>
+                <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"/>
+                <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"/>
+                <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"/>
+                <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" />
+                <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"/>
+                <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"/>
+                <img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"/>
+            </div>
+            <ul>
+                <li>Design Gráfico, Canva & Figma</li>
+                <li>HTML, CSS & JS</li>
+                <li>React Native</li>
+                <li>C, C++, Python e PHP</li>
+                <li>MySQL & XAMPP</li>
+            </ul>
+        </section>
+
+        <section>
+            <ul>
+                <h2 id="idiomas">Idiomas</h2>
+                <li>Português - Nativo</li>
+                <li>Inglês - Básico</li>
+            </ul>
+        </section>
+        <section>
+            <h2 id="extra">Extracurriculares</h2>
+            <ul>
+                <p><strong>Teatro e Dança - 2022</strong></p>
+                <li>Participação atuando na peça "Eu estou errada?" com carga horária de 40 horas de ensaios, apresentação realizada em 14 e 15 de março.</li>
+
+                <p><strong>Livro - 2023</strong></p>
+                <a href="https://www.wattpad.com/1518944304-uma-garota-quase-surta-neste-livro-in%C3%ADcio"><li>Autoria e desenvolvimento do livro de poesias "Uma Garota Quase Surta Neste Livro" disponível no Watpat.</li></a>
+
+                <p><strong>Technovation Girls BR - 2024</strong></p>
+                <a href="https://youtu.be/x2xdpw8PmEo?si=iiM2Y7poQrtIt0yM"><li>Aplicativo com uma plataforma gamificada de consumo sustentável, onde os usuários ganhavam pontos por fazer doações de materiais que não utilizam mais. E em troca, era oferecido uma variedade de produtos feitos a partir de materiais recicláveis.</li></a>
+              
+                <p><strong>Hackathon - 2024</strong></p>
+                <li>Aplicativo voltado para incentivar a doação de alimentos e combater o desperdício, conectando pessoas, empresas e instituições que desejam contribuir com a redução da fome e o melhor aproveitamento de recursos alimentares.</li>
+
+                <p><strong>Technovation Girls BR - 2025</strong></p>
+                <li>Aplicativo desenvolvido para facilitar doações de cabelo, promovendo empatia, solidariedade e contribuindo para a autoestima de pessoas em tratamento contra o câncer e outras condições que causam a perda capilar.</li>
+
+              </ul>
+        </section>
+       
+        <section>
+            <h2 id="expe">Experiência Profissional</h2>
+            <ul>
+                <p><strong>Exclusiva Bom Preço</strong> - Dez/2024 & Mar/2025</p>
+                <li>Atendimento e comunicação com clientes presencial e virtualmente</li>
+                <li>Produção e edição de vídeos para redes sociais</li>
+                <li>Design gráfico para Instagram</li>
+            </ul>
+        </section>
+        <section>
+            <h2 id="contato">Contato</h2>
+            <p><a  href="https://wa.me/55119890549789" target="_blank">📞 +55 11 98905-4989</a></p>
+            <p><a href="mailto:luuiza.ribass@gmail.com">📧 luiza.ribass@gmail.com</a></p>
+            <p>🔗 <a href="https://www.linkedin.com/in/maria-luiza-ribas-7037a7278/" target="_blank">LinkedIn</a> | <a href="https://github.com/luuizaribass" target="_blank">GitHub</a> | <a href="https://www.instagram.com/maria.ribass" target="_blank">Instagram</a> | <a href="https://discordapp.com/users/864290644779204618" target="_blank">Discord</a>
+        </section>
+
+    </div>
+    <footer class="final">
+        <p>&copy; 2024 Maria Luiza Ribas</p>
+    </footer>
+
+    <button class="scroll-to-top" id="scrollToTopBtn">&#8593;</button>
+</body>
+<script>
+    // Pega o botão
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    
+    // Mostra ou esconde o botão baseado na rolagem da página
+    window.onscroll = function() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    };
+    
+    // Função para rolar até o topo quando o botão for clicado
+    scrollToTopBtn.onclick = function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Rolagem suave
+        });
+    };
+    </script>
+    
+</html>
